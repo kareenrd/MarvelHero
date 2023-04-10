@@ -1,0 +1,21 @@
+.card{
+  width: 60%;
+  margin: 20px;
+}
+
+.container{
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.not-found{
+  font-size: 60px;
+  background-color: gray;
+  width: 600px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

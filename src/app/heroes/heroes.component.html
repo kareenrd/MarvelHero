@@ -1,0 +1,39 @@
+
+
+<mat-paginator
+  [length]="totalRecords"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="[3]"
+  [pageIndex]="pageIndex"
+  aria-label="Select page"
+  (page)="handlePageEvent($event)"
+></mat-paginator>
+<div class="container">
+  <form class="form" (keyup)="searchSuper()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Busca tu super heroe</mat-label>
+      <input matInput placeholder="Busca tu super heroe" name="search" [(ngModel)]="search">
+    </mat-form-field>
+  </form>
+</div>
+<div class="container" *ngIf="superheroes.length == 0">
+
+  <div class="not-found">
+    <span>NO HEROES DATA</span>
+  </div>
+</div>
+<div class="container">
+  <mat-card class="card" *ngFor="let super of superheroes">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{super.name}}</mat-card-title>
+        <!-- <mat-card-subtitle>{{ super.id}}</mat-card-subtitle> -->
+        <img mat-card-sm-image src="{{super.thumbnail.path}}.jpg" width="100" >
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      {{super.description}}
+    </mat-card-content>
+  </mat-card>
+</div>
+
